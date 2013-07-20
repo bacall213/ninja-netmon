@@ -7,6 +7,6 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": "https://github.com/bacall213/ninja-cpu",
-  "author": "bcall",
+  "author": "bacall213",
   "license": "BSD"
 }
