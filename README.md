@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Ninja CPU Module
 ======================
 Author: Brian Call
@@ -18,3 +19,9 @@ npm install
 
 ### Step 2 - Restart the Ninja Block process
 sudo service ninjablock restart
+=======
+ninja-cpu
+=========
+
+Ninja Block CPU Monitor Driver
+>>>>>>> 1e934ed1956f4dbddff24b49742a985b6cab054a
