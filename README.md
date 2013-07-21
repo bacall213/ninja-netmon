@@ -17,7 +17,9 @@ npm install
 
 
 ### Step 2 - Restart the Ninja Block process
+```
 sudo service ninjablock restart
+```
 
 
 ## Notes
