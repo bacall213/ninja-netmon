@@ -18,3 +18,9 @@ npm install
 
 ### Step 2 - Restart the Ninja Block process
 sudo service ninjablock restart
+
+
+## Notes
+- Install instructions have not been checked
+- CPU monitoring code based on Ninja Blocks CPU monitor tutorial
+- Other code examples borrowed from ninja-diskspace
