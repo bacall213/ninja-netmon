@@ -2,7 +2,7 @@ Ninja CPU Monitor
 =================
 Author: Brian Call
 Version: 0.0.2
-Status: Stable
+Status: Unstable
 License: BSD
 
 
@@ -10,8 +10,8 @@ License: BSD
 ### Step 1 - Fetch the driver
 ```
 cd PATH_TO_NINJA_CLIENT/drivers
-git clone https://github.com/bacall213/ninja-cpu.git
-cd ninja-cpu
+git clone https://github.com/bacall213/ninja-netmon.git
+cd ninja-netmon
 npm install
 ```
 
@@ -24,5 +24,7 @@ sudo service ninjablock restart
 
 ## Notes
 - Install instructions have not been checked
-- CPU monitoring code based on Ninja Blocks CPU monitor tutorial
-- Other code examples borrowed from ninja-diskspace
+- Default interface: wlan0
+- Default refresh rate: 1 second
+- Driver creates individual graphs for Tx and Rx
+- Data refresh rate behind the scenes is 1 second and is not configurable through the web UI, thus refreshing more often than once every second will have to be configured in lib/netrx.js and lib/nettx.js.

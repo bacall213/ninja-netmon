@@ -1,21 +1,28 @@
-var Device = require('./lib/device')
+var NetRxDevice = require('./lib/netrx')
+  , util = require('util')
+  , stream = require('stream')
+  , configHandlers = require('./lib/config-handlers');
+
+var NetTxDevice = require('./lib/nettx')
   , util = require('util')
   , stream = require('stream')
   , configHandlers = require('./lib/config-handlers');
 
 // Give our driver a stream interface
-util.inherits(cpuDriver,stream);
+util.inherits(netmonDriver,stream);
 
-// Option for poll interval and enable/disable
-// poll_interval: 1000 = 1 second
-var poll_interval = '5000';
+// Poll interval default (in seconds) (converted to milliseconds in device.js)
+var default_poll_interval = 1;
+var default_nic = "wlan0";
+
+// Enable/disable driver
 var enabled = true;
 
 // Our greeting to the user.
 var HELLO_WORLD_ANNOUNCEMENT = {
   "contents": [
-    { "type": "heading",      "text": "Ninja CPU Driver Loaded" },
-    { "type": "paragraph",    "text": "The Ninja CPU  driver has been loaded. You should not see this message again." }
+    { "type": "heading",      "text": "Ninja Network Monitor Driver Loaded" },
+    { "type": "paragraph",    "text": "The Ninja Network Monitor Driver has been loaded. You should not see this message again." }
   ]
 };
 
@@ -33,7 +40,7 @@ var HELLO_WORLD_ANNOUNCEMENT = {
  * @fires register - Emit this when you wish to register a device (see Device)
  * @fires config - Emit this when you wish to send config data back to the Ninja Platform
  */
-function cpuDriver(opts,app) {
+function netmonDriver(opts,app) {
 
   var self = this;
   this.opts = opts;
@@ -49,11 +56,14 @@ function cpuDriver(opts,app) {
       if (!opts.hasSentAnnouncement) {
         self.emit('announcement',HELLO_WORLD_ANNOUNCEMENT);
         opts.hasSentAnnouncement = true;
+        opts.poll_interval = default_poll_interval;
+        opts.nic = default_nic;
         self.save();
       }
 
       // Register a device
-      self.emit('register', new Device(app, opts));
+      self.emit('register', new NetRxDevice(app, opts));
+      self.emit('register', new NetTxDevice(app, opts));
     }
   });
 };
@@ -70,7 +80,7 @@ function cpuDriver(opts,app) {
  */
 
 
-cpuDriver.prototype.config = function(rpc,cb) {
+netmonDriver.prototype.config = function(rpc,cb) {
 
   var self = this;
 
@@ -90,4 +100,4 @@ cpuDriver.prototype.config = function(rpc,cb) {
 
 
 // Export it
-module.exports = cpuDriver;
+module.exports = netmonDriver;

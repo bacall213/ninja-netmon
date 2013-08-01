@@ -1,12 +1,12 @@
 {
-  "name": "ninja-cpu",
+  "name": "ninja-netmon",
   "version": "0.0.2",
-  "description": "Ninja CPU Monitor",
+  "description": "Ninja Network Monitor",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": "https://github.com/bacall213/ninja-cpu",
+  "repository": "https://github.com/bacall213/ninja-netmon",
   "author": "bacall213",
   "license": "BSD"
 }
