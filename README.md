@@ -1,8 +1,8 @@
-Ninja CPU Monitor
-=================
+Ninja Network Monitor
+=====================
 Author: Brian Call
 Version: 0.0.3
-Status: Unstable
+Status: Stable
 License: BSD
 
 
