@@ -1,9 +1,9 @@
 Ninja Network Monitor
 =====================
-Author: Brian Call
-Version: 0.0.3
-Status: Stable
-License: BSD
+Author: Brian Call 
+Version: 0.0.4 
+Status: Stable 
+License: BSD 
 
 
 ## Installation
