@@ -1,6 +1,6 @@
 {
   "name": "ninja-netmon",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Ninja Network Monitor",
   "main": "index.js",
   "scripts": {
