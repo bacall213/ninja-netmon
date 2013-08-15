@@ -1,6 +1,6 @@
 {
   "name": "ninja-netmon",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Ninja Network Monitor",
   "main": "index.js",
   "scripts": {
@@ -8,5 +8,5 @@
   },
   "repository": "https://github.com/bacall213/ninja-netmon",
   "author": "bacall213",
-  "license": "BSD"
+  "license": "MIT"
 }
