@@ -1,13 +1,13 @@
 Ninja Network Monitor
 =====================
 Author: Brian Call 
-Version: 0.0.5
+Version: 0.0.6
 Status: Stable 
 License: MIT
 
 
-## Installation
-### Step 1 - Fetch the driver
+### Installation
+#### Step 1 - Fetch the driver
 ```
 cd PATH_TO_NINJA_CLIENT/drivers
 git clone https://github.com/bacall213/ninja-netmon.git
@@ -16,14 +16,13 @@ npm install
 ```
 
 
-### Step 2 - Restart the Ninja Block process
+#### Step 2 - Restart the Ninja Block process
 ```
 sudo service ninjablock restart
 ```
 
 
-## Notes
-- Install instructions have not been checked
+### Notes
 - Default interface: wlan0
 - Default refresh rate: 1 second
 - Driver creates individual graphs for Tx and Rx
@@ -32,7 +31,18 @@ sudo service ninjablock restart
 - Data parsed from /sys/class/net/<device>/statistics/<rx_bytes|tx_bytes>
 
 
-## License
+
+### Change History
+##### 0.0.6
+- Added change history to readme
+- Changed device IDs from 2000 (sandbox) to 531 and 541 (ninjablock incoming/outout network)
+- Updated config handlers with cleaner output
+- Removed the poll interval from the network stat statements. The poll interval for the driver should be adjustable, but the actual poll interval peformed in the background to get Kbps should always be 1 second. 
+- Added require('os') into each driver so that os.hostname() can be used to produce a more descriptive widget title
+
+
+
+### License
 Copyright (c) 2013 Brian Call
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
