@@ -1,7 +1,7 @@
 Ninja Network Monitor
 =====================
 Author: Brian Call 
-Version: 0.0.6
+Version: 0.0.7
 Status: Stable 
 License: MIT
 
@@ -33,6 +33,14 @@ sudo service ninjablock restart
 
 
 ### Change History
+##### 0.0.7
+- Removed unneeded switch statement
+- Added check to ensure user-selected interface is in os.networkInterfaces()
+- Shortened default titles to prevent wrapping on widget
+- Added debug messages for success/fail when interface is found
+- TODO: Need to do something more than output a debug message when the device isn't found
+
+
 ##### 0.0.6
 - Added change history to readme
 - Changed device IDs from 2000 (sandbox) to 531 and 541 (ninjablock incoming/outout network)
